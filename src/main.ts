@@ -10,7 +10,7 @@ app.get("/", (_, res) => {
         ok: false,
         message: "it is ok",
         samuelAddams: {
-            teste: "abc samuel addams",
+            teste: "ABC samuel addams",
         },
     });
 });
