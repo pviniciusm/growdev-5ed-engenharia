@@ -9,6 +9,9 @@ app.get("/", (_, res) => {
     res.send({
         ok: true,
         message: "it is ok",
+        data: {
+            teste: "abc samuel addams",
+        },
     });
 });
 
