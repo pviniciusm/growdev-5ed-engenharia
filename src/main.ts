@@ -7,9 +7,9 @@ app.use(cors());
 
 app.get("/", (_, res) => {
     res.send({
-        ok: false,
+        ok: true,
         message: "it is ok",
-        data: {
+        samuelAddams: {
             teste: "abc samuel addams",
         },
     });
