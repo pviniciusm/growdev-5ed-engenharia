@@ -6,11 +6,31 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/", (_, res) => {
-    res.status(200).send({
+    res.send({
         ok: false,
         message: "it is ok",
-        data: {
-            teste: "samuel addams",
+        samuelAddams: {
+            teste: "abc samuel addams",
+        },
+    });
+});
+
+app.post("/", (_, res) => {
+    res.send({
+        ok: true,
+        message: "it is ok",
+        samuelAddams: {
+            teste: "abc samuel addams",
+        },
+    });
+});
+
+app.put("/", (_, res) => {
+    res.send({
+        ok: true,
+        message: "it is ok",
+        samuelAddams: {
+            teste: "abc samuel addams",
         },
     });
 });
