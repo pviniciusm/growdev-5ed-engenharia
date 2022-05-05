@@ -15,4 +15,14 @@ app.get("/", (_, res) => {
     });
 });
 
+app.post("/", (_, res) => {
+    res.send({
+        ok: true,
+        message: "it is ok",
+        samuelAddams: {
+            teste: "abc samuel addams",
+        },
+    });
+});
+
 app.listen(8081, () => console.log("Server is running..."));
