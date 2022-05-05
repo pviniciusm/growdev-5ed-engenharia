@@ -6,11 +6,11 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/", (_, res) => {
-    res.send({
+    res.status(200).send({
         ok: false,
         message: "it is ok",
         data: {
-            teste: "abc samuel addams",
+            teste: "samuel addams",
         },
     });
 });
