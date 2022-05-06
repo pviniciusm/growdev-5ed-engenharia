@@ -1,21 +1,32 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
+import { logRequest } from "./middlewares/log-requests";
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.get('/', (_, res) => {
-  res.send({
-    ok: false,
-    message: 'it is ok',
-    samuelAddams: {
-      teste: 'ABC samuel addams',
-    },
-  });
+app.get("/", logRequest, (_, res) => {
+    res.send({
+        ok: false,
+        message: "it is ok",
+        samuelAddams: {
+            teste: "ABC samuel addams",
+        },
+    });
 });
 
-app.post('/', (_, res) => {
+app.post("/", logRequest, (_, res) => {
+    res.send({
+        ok: true,
+        message: "it is ok",
+        samuelAddams: {
+            teste: "abc samuel addams",
+        },
+    });
+});
+
+app.put("/", logRequest, (_, res) => {
   res.send({
     ok: true,
     message: 'it is ok',
@@ -25,24 +36,12 @@ app.post('/', (_, res) => {
   });
 });
 
-app.put('/', (_, res) => {
-  res.send({
-    ok: true,
-    message: 'it is ok',
-    samuelAddams: {
-      teste: 'abc samuel addams',
-    },
-  });
-});
 app.delete('/', (_, res) => {
   res.send({
     ok: true,
     message: 'arquivo deletado',
   });
 });
-
-// crhistian é o cara kkkkkk
-
 
 app.get("/growcoins/:growcoins", (req: Request, res: Response) => {
     const growcoins = req.params.growcoins as string;
