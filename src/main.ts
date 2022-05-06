@@ -5,6 +5,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+//teste
 app.get("/", (_, res) => {
     res.send({
         ok: false,
