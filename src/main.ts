@@ -1,11 +1,12 @@
 import express from "express";
 import cors from "cors";
+import { logRequest } from "./middlewares/log-requests";
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.get("/", (_, res) => {
+app.get("/", logRequest, (_, res) => {
     res.send({
         ok: false,
         message: "it is ok",
@@ -15,7 +16,7 @@ app.get("/", (_, res) => {
     });
 });
 
-app.post("/", (_, res) => {
+app.post("/", logRequest, (_, res) => {
     res.send({
         ok: true,
         message: "it is ok",
@@ -25,7 +26,7 @@ app.post("/", (_, res) => {
     });
 });
 
-app.put("/", (_, res) => {
+app.put("/", logRequest, (_, res) => {
     res.send({
         ok: true,
         message: "it is ok",
