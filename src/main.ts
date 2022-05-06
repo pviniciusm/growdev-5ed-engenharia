@@ -15,6 +15,26 @@ app.get("/", (_, res) => {
     });
 });
 
+app.post("/", (_, res) => {
+    res.send({
+        ok: true,
+        message: "it is ok",
+        samuelAddams: {
+            teste: "abc samuel addams",
+        },
+    });
+});
+
+app.put("/", (_, res) => {
+    res.send({
+        ok: true,
+        message: "it is ok",
+        samuelAddams: {
+            teste: "abc samuel addams",
+        },
+    });
+});
+
 app.get("/growcoins/:growcoins", (req: Request, res: Response) => {
     const growcoins = req.params.growcoins as string;
     const min: number = 1 
@@ -39,26 +59,6 @@ app.get("/growcoins/:growcoins", (req: Request, res: Response) => {
     : res.status(418).send({
         ok: false,
         message: `Seu número aleatório é muito baixo, você perdeu todas as suas GrowCoins :(`,
-    });
-});
-
-app.post("/", (_, res) => {
-    res.send({
-        ok: true,
-        message: "it is ok",
-        samuelAddams: {
-            teste: "abc samuel addams",
-        },
-    });
-});
-
-app.put("/", (_, res) => {
-    res.send({
-        ok: true,
-        message: "it is ok",
-        samuelAddams: {
-            teste: "abc samuel addams",
-        },
     });
 });
 
